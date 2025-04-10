@@ -6,12 +6,6 @@ import pandas as pd
 import plotly.express as px
  
 # Inicialização do Earth Engine
-##autenticação nova
-try:
-    ee.Initialize()
-except Exception as e:
-    # ee.Authenticate()
-    ee.Initialize(project='ee-scriptsremoteambgeo')
 
 st.set_page_config(layout="wide")
 st.title("MapBiomas - Análise de Uso e Cobertura com GeoJSON")

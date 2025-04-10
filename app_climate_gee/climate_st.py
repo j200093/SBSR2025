@@ -20,14 +20,7 @@ import tempfile
 from google.oauth2 import service_account
 from ee import oauth
  
-#====================================================
-#Login GEE
-#====================================================
-# No lugar de usar service_account:
 
-# ee.Authenticate()  # vai abrir um link para login
-ee.Initialize(project='ee-scriptsremoteambgeo')
-###Testando autenticação nova
 # ====================================================
 # CONFIGURAÇÃO INICIAL DA PÁGINA
 # ====================================================
