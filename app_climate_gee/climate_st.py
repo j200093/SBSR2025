@@ -29,9 +29,39 @@ st.set_page_config(layout="wide")
 auth_map = geemap.Map()
 st.title('Análise Variáveis Climáticas (P - ET)')
 st.markdown("""
-O APP permite que o usuário visualize uma série temporal mensal de Precipitação, 
-Evapotranspiração, Balanço Hídrico (P-ET) e Índice de Seca Palmer.   
-Para construção deste APP foram utilizadas imagens CHIRPS, MOD16 e TERRACLIMATE.
+Este aplicativo permite visualizar e analisar séries temporais mensais de **Precipitação**, **Evapotranspiração (ET)**, **Balanço Hídrico (P - ET)** e **Índice de Seca de Palmer (PDSI)**.
+
+🔍 **O que o app faz:**
+- Extrai estatísticas temporais de variáveis climáticas em áreas desenhadas ou carregadas pelo usuário.
+- Gera gráficos interativos de séries históricas e indicadores de excedente e déficit hídrico.
+- Permite a análise espacial média das variáveis na região de interesse (ROI).
+
+🛰 **Fontes de dados utilizadas:**
+- **CHIRPS**: Precipitação (mm/mês)
+- **MODIS MOD16**: Evapotranspiração (ET)
+- **TERRACLIMATE**: Índice de Seca de Palmer (PDSI)
+
+---
+
+🧭 **Como utilizar o app:**
+
+1. **Defina a área de interesse (ROI)**:
+   - Faça o upload de um arquivo vetorial (GeoJSON, KML, KMZ, GPKG ou SHP compactado `.zip`), **ou**
+   - Desenhe diretamente no mapa interativo disponível na interface.
+
+2. **Selecione o intervalo de datas** desejado (início e fim da análise).
+
+3. Clique no botão **🚀 Executar Análise** para processar os dados.
+
+4. Navegue pelos gráficos gerados:
+   - Série temporal de Precipitação, ET e Balanço Hídrico (P - ET)
+   - Indicadores de Excedente e Déficit Hídrico
+   - Série histórica e mapa de calor do PDSI
+   - Visualização espacial média das variáveis sobre a ROI
+
+---
+
+💡 Este app é voltado para pesquisadores, técnicos e gestores que desejam realizar diagnósticos ambientais rápidos e baseados em dados de sensoriamento remoto, utilizando o poder computacional do **Google Earth Engine** com uma interface acessível e interativa.
 """)
 
 # Spinner de carregamento inicial
