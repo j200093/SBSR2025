@@ -1,4 +1,5 @@
 import streamlit as st
+import geemap
 import geemap.foliumap as geemap
 import ee
 import json
@@ -16,6 +17,9 @@ with st.sidebar:
     ano_novo = st.selectbox("📅 Selecione o ano:", list(range(1985, 2024)), index=2023 - 1985)
     geojson_file = st.file_uploader("📂 Faça upload de um GeoJSON", type=["geojson"])
     run_analysis = st.button("🚀 Executar Análise")
+
+# Inicializa o mapa
+m = geemap.Map(center=[-14.5, -52], zoom=4)
 
 # Armazena o ano selecionado
 if "ano_atual" not in st.session_state:
@@ -89,8 +93,7 @@ legenda = pd.DataFrame([
     {"Classe": 27, "Nome": "Não Observado", "Cor": "#ffffff"},
 ])
 
-# Inicializa o mapa
-m = geemap.Map(center=[-14.5, -52], zoom=4)
+
 
 if geojson_file is not None and run_analysis:
     try:
