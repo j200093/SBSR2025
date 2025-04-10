@@ -16,7 +16,7 @@ st.set_page_config(page_title="Embargos", layout="wide")
 #layout="wide" - Define o layout da página como "wide" (largura total)
 
 # Caminho para o GeoPackage
-gpkg_file = "./car_embargos.gpkg"
+gpkg_file = "./app_embargos_car/car_embargos.gpkg"
 # Informar a coluna com a matrícula do imóvel rural
 coluna_matricula_imovel = 'cod_imovel'
 
