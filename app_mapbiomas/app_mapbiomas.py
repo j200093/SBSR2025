@@ -9,13 +9,28 @@ import plotly.express as px
 
 # Inicializa o mapa
 m = geemap.Map(center=[-14.5, -52], zoom=4)
-
+m.setOptions('HYBRID')
 
 st.set_page_config(layout="wide")
 st.title("MapBiomas - Análise de Uso e Cobertura com GeoJSON")
 
+st.markdown("""
+O aplicativo permite visualizar e analisar dados de uso e cobertura da terra com base na Coleção 9 do MapBiomas.
+
+Você pode realizar análises específicas para uma área de interesse (ROI) em qualquer ano entre 1985 e 2023, bastando fornecer um arquivo no formato GeoJSON com a geometria desejada.
+
+### 🧭 Como usar:
+1. No menu lateral, selecione o **ano** desejado.
+2. Faça o **upload do arquivo GeoJSON** com a área de interesse.
+3. Clique no botão **"🚀 Executar Análise"**.
+4. O mapa será atualizado com a imagem recortada da sua área e serão exibidos dois gráficos com o cálculo da área por classe de uso e cobertura.
+
+Você também pode navegar no mapa para explorar a classificação completa do MapBiomas para o Brasil.
+""")
+
 # Sidebar
 with st.sidebar:
+    st.sidebar.image("app_mapbiomas/asset/ambgeo.png")
     st.header("Configurações")
     ano_novo = st.selectbox("📅 Selecione o ano:", list(range(1985, 2024)), index=2023 - 1985)
     geojson_file = st.file_uploader("📂 Faça upload de um GeoJSON", type=["geojson"])
