@@ -1,0 +1,13 @@
+geemap
+earthengine-api
+streamlit
+streamlit-folium
+folium
+plotly
+altair
+pandas
+geopandas
+fiona
+shapely
+setuptools
+google-auth
