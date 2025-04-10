@@ -43,7 +43,7 @@ st.success('Informações Processadas!')
 # ====================================================
 # BARRA LATERAL (SIDEBAR) - Upload e desenho da ROI
 # ====================================================
-st.sidebar.image("asset/ambgeo.png")
+st.sidebar.image("./asset/ambgeo.png")
 
 # Upload de arquivo com geometria
 uploaded_file = st.sidebar.file_uploader(

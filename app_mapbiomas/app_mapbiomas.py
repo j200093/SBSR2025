@@ -1,5 +1,4 @@
 import streamlit as st
-import geemap
 import geemap.foliumap as geemap
 import ee
 import json
@@ -7,6 +6,10 @@ import pandas as pd
 import plotly.express as px
  
 # Inicialização do Earth Engine
+
+# Inicializa o mapa
+m = geemap.Map(center=[-14.5, -52], zoom=4)
+
 
 st.set_page_config(layout="wide")
 st.title("MapBiomas - Análise de Uso e Cobertura com GeoJSON")
@@ -17,9 +20,6 @@ with st.sidebar:
     ano_novo = st.selectbox("📅 Selecione o ano:", list(range(1985, 2024)), index=2023 - 1985)
     geojson_file = st.file_uploader("📂 Faça upload de um GeoJSON", type=["geojson"])
     run_analysis = st.button("🚀 Executar Análise")
-
-# Inicializa o mapa
-m = geemap.Map(center=[-14.5, -52], zoom=4)
 
 # Armazena o ano selecionado
 if "ano_atual" not in st.session_state:
@@ -92,7 +92,6 @@ legenda = pd.DataFrame([
     {"Classe": 31, "Nome": "Aquicultura", "Cor": "#091077"},
     {"Classe": 27, "Nome": "Não Observado", "Cor": "#ffffff"},
 ])
-
 
 
 if geojson_file is not None and run_analysis:
