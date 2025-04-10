@@ -5,7 +5,7 @@ import folium
 
 import pandas as pd
 import plotly.express as px
-
+import fiona
 import geopandas as gpd
 
 from proc import ler_geodataframe, selecionar_imovel_car, inserir_geojson_folium, mostrar_status
